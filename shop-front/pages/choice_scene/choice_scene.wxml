@@ -1,0 +1,36 @@
+<view class="all">
+  <view class="view-1">
+    <image src="{{avatar}}" mode="widthFix" />
+  </view>
+  <view class="view-2">
+    <view class="card">
+      <text class="title">第一步 完善您的信息</text>
+      <text class="tip">将根据您的信息设计</text>
+      <text class="choice">输入您需求的类型:</text>
+      <input class="input" type="text" value="{{shopType}}" bindinput="inputShopType" placeholder="  例如：便利店；火锅店；水果店，等" />
+      <text class="choice">选择您的地址:</text>
+      <picker class="picker" mode="region" bindchange="regionChange">
+        <view>
+          <text class="pickerText">所在区域：</text>
+          {{currentRegion}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="view-2">
+    <text class="title">第二步 完善您的需求</text>
+    <text class="switch">是否为连锁店:</text>
+    <switch checked="{{isSwitch}}" bindchange="bindchangeSwitch" />
+    <text class="choice">输入您需求的产品类型:</text>
+    <input class="input" type="text" value="{{goodsType}}" bindinput="inputGoodsType" placeholder="  例如：厨房冰箱；卧式展示柜，等" />
+  </view>
+
+  <view class="view-2">
+    <text class="title">第三步 完善您的手机号码</text>
+    <text class="choice">输入您的电话号码:</text>
+    <input class="input" type="number" value="{{phone}}" maxlength="11" bindinput="inputNumber" placeholder="电话号码" />
+  </view>
+
+  <button style="background-color: var(--themeColor);color: white;" bind:tap="bindconfirm">提交</button>
+</view>

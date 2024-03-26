@@ -1,0 +1,49 @@
+.all{
+  background-color: #efefef;
+}
+.view-1{
+  padding: 20rpx;
+}
+.view-1 image{
+  /* padding: 10rpx; */
+  border-radius: 20rpx;
+}
+.view-2{
+  margin: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.title{
+  display:block;
+  font-size: larger;
+  font-weight: bolder;
+  padding: 12rpx;
+}
+.tip{
+  font-size: smaller;
+  font-style: oblique;
+  display:block;
+  padding: 7rpx;
+  color: #aaa;
+}
+.choice{
+  padding: 20rpx;
+  display:block;
+}
+.input{
+  padding: 20rpx;
+  border: 3rpx solid #efefef;
+  border-radius: 15rpx;
+}
+.picker{
+  padding: 20rpx;
+  border: 3rpx solid #efefef;
+  border-radius: 15rpx;
+}
+.pickerText{
+  color: #aaa;
+}
+.switch{
+  padding: 20rpx;
+}

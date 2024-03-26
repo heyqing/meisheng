@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "SearchBar":"../../components/SearchBar/SearchBar"
+  },
+  "navigationBarTitleText": "场景管",
+  "window": {
+    "onReachBottomDistance": 50
+  }
+}

@@ -1,0 +1,64 @@
+<view class="all">
+  <image src="{{sceneDetail.sceneAvatar}}" />
+  <view class="view-2">
+    <text class="sceneName">{{sceneDetail.sceneName}}</text>
+    <text class="sceneDesc">{{sceneDetail.sceneDesc}}</text>
+  </view>
+  <view class="view-3">
+    <text class="title">采购明细</text>
+    <view class="sceneGoodsNameList" wx:for="{{sceneDetail.sceneGoods}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+      <text class="sceneGoodsName">{{item.goodsName}}</text>
+    </view>
+    <view class="view-3-1">
+      <view class="button-up">
+        <view class="look-button" bind:tap="handleLookButton">
+          <text>查看商品列表</text>
+          <icon type="{{icon}}" />
+        </view>
+      </view>
+      <view wx:if="{{isShow}}">
+        <view class="navigator-up" wx:for="{{sceneDetail.sceneGoods}}" wx:for-item="item1" wx:for-index="index" wx:key="id">
+          <navigator class="nav-goods" url="/pages/product_detail/index?id={{item1.goodsId}}">
+              <view class="left">
+                <image class="goodsImage" mode="widthFix" src="{{item1.goodsAvatar}}"></image>
+              </view>
+              <view class="right">
+                <view class="product_title">{{item1.goodsTitle}}</view>
+                <view class="product_name">{{item1.goodsName}}</view>
+                <view class="product_desc">{{item1.goodsDesc}}</view>
+                <view class="product_price"> ￥{{item1.goodsPrice}}</view>
+              </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="detail">
+    <view wx:for="{{sceneDetail.sceneDetail}}" wx:for-item="item2" wx:for-index="index" wx:key="id">
+      <image src="{{item2}}" mode="widthFix" />
+    </view>
+  </view>
+
+  <view class="btm_tool">
+    <navigator open-type="switchTab" url="/pages/index/index" class="tool_item">
+      <view class="iconfont icon-home"></view>
+      <view>首页</view>
+      <button></button>
+    </navigator>
+    <view class="tool_item">
+      <view class="iconfont icon-kefufenxiermaikefu"></view>
+      <view>客服</view>
+      <button open-type="contact"></button>
+    </view>
+    <navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
+      <view class="iconfont icon-gouwuche"></view>
+      <view>购物车</view>
+    </navigator>
+    <view class="tool_item btn_cart" bindtap="handleCartAdd">
+      加入购物车
+    </view>
+    <view class="tool_item btn_buy" bindtap="handleBuy">
+      立即购买
+    </view>
+  </view>
+</view>

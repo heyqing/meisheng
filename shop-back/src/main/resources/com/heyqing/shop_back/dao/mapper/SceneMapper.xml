@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyqing.shop_back.dao.mapper.SceneMapper">
+
+<!--    Page<SceneEntity> sceneList(Page<SceneEntity> page, String query);-->
+
+    <select id="sceneList" resultType="com.heyqing.shop_back.dao.entity.SceneEntity">
+        select * from `scene_table`
+        where `scene_name` like CONCAT('%', #{query}, '%')
+          or `scene_desc` like CONCAT('%', #{query}, '%')
+        order by create_time asc
+    </select>
+</mapper>

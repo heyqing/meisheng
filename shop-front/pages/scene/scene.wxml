@@ -1,0 +1,39 @@
+<view class="all">
+
+  <SearchBar></SearchBar>
+
+  <!-- 轮播图 开始 -->
+  <view class="index_swiper">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:for-item="item" wx:key="id">
+        <navigator url="/pages/scene_detail/scene_detail?id={{item.sceneId}}">
+          <image mode="widthFix" src="{{item.sceneAvatar}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图 结束 -->
+  <!-- 定制开始 -->
+  <navigator url="/pages/choice_scene/choice_scene">
+    <view class="image-view">
+      <image class="centered-image" src="{{avatar}}" />
+    </view>
+  </navigator>
+  <!-- 定制结束 -->
+  <!-- 场景推荐 -->
+  <view class="recommend">
+    <text class="title">场景推荐</text>
+    <view class="list">
+      <view class="scene_detail" wx:for="{{floorList}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+        <navigator url="/pages/scene_detail/scene_detail?id={{item.sceneId}}">
+          <image mode="widthFix" src="{{item.sceneAvatar}}"></image>
+          <view class="product_name">{{item.sceneName}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- 结束 -->
+  <view class="end">
+    <text>——    没有更多了    ——</text>
+  </view>
+</view>

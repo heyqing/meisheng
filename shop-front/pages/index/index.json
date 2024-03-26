@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "SearchBar":"../../components/SearchBar/SearchBar"
+  },
+  "navigationBarTitleText": "美声电器",
+  "window": {
+    "onReachBottomDistance": 50
+  }
+}

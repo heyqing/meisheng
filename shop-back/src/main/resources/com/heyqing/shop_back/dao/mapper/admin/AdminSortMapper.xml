@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyqing.shop_back.dao.mapper.admin.AdminSortMapper">
+    <resultMap id="sortMap" type="com.heyqing.shop_back.dao.entity.SortEntity">
+        <id column="sort_id" property="sortId" />
+        <result column="sort_type" property="sortType"/>
+        <result column="sort_avatar" property="sortAvatar"/>
+        <result column="sort_name" property="sortName"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+    <select id="goodsList" resultMap="sortMap">
+        select * from `sort_table` where `sort_name` like CONCAT('%', #{query}, '%')
+        order by create_time asc
+    </select>
+</mapper>

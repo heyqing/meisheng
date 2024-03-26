@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heyqing.shop_back.dao.mapper.CategoryMapper">
+
+    <resultMap id="cateMap" type="com.heyqing.shop_back.dao.entity.CategoryEntity">
+        <id column="category_id" property="categoryId"/>
+        <result column="sort_id" property="sortId"/>
+        <result column="category_avatar" property="categoryAvatar"/>
+        <result column="category_name" property="categoryName"/>
+        <result column="category_title" property="categoryTitle" />
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+<!--    Page<GetCategoryEntity> goodsList(Page<GetCategoryEntity> page, String query);-->
+    <select id="goodsList" resultMap="cateMap">
+        select * from `category_table` where `category_name` like CONCAT('%', #{query}, '%')
+        order by `create_time` asc
+    </select>
+<!--    List<String> selectAllTitle();-->
+    <select id="selectAllTitle" resultType="java.lang.String">
+        select `category_title` from `category_table` order by `create_time` asc
+    </select>
+</mapper>

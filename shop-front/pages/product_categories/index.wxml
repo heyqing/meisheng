@@ -1,0 +1,17 @@
+<view class="ALL_PAGE">
+  <SearchBar></SearchBar>
+  <view class="index_hot_product">
+    <view class="list">
+      <view class="product_detail" wx:for="{{categoryFloor}}" wx:for-item="item" wx:for-index="index" wx:key="id">
+        <navigator url="/pages/product_detail/index?id={{item.goodsId}}">
+          <image mode="widthFix" src="{{item.goodsAvatar}}"></image>
+          <view class="product_title">{{item.goodsTitle}}</view>
+          <view class="product_name">{{item.goodsName}}</view>
+          <view class="product_desc">{{item.goodsDesc}}</view>
+          <view class="product_price"> ￥{{item.goodsPrice}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="nothing">没有更多了</view>
+</view>

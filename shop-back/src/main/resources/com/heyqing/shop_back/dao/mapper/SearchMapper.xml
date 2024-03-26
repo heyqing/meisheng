@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis配置文件-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.heyqing.shop_back.dao.mapper.SearchMapper">
+
+    <!--    List<SearchEntity> selectListByQ(String q);-->
+    <select id="selectListByQ" resultType="com.heyqing.shop_back.dao.entity.SearchEntity">
+        SELECT * FROM goods_table
+        WHERE goods_name LIKE CONCAT('%', #{q}, '%')
+          or goods_desc LIKE CONCAT('%', #{q}, '%');
+    </select>
+</mapper>
