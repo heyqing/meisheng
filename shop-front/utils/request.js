@@ -1,5 +1,4 @@
 // request.js
-// const baseUrl="http://47.113.147.170:8080";
 const baseUrl = "http://localhost:8080"
 module.exports = {
     /*
